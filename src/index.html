@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function set_background() {
+            const paragraph = document.querySelector('p');
+            paragraph.style.backgroundColor = 'yellow';
+        }
+        function getAttributes() {
+            // Get the reference to the link element.
+            const link = document.getElementById('w3r');
+
+            // Get the value of the href attribute.
+            const href = link.getAttribute('href');
+
+            // Get the value of the hreflang attribute.
+            const hreflang = link.getAttribute('hreflang');
+
+            // Get the value of the rel attribute.
+            const rel = link.getAttribute('rel');
+
+            // Get the value of the target attribute.
+            const target = link.getAttribute('target');
+
+            // Get the value of the type attribute.
+            const type = link.getAttribute('type');
+
+            // Display the values of the attributes.
+            const output = `
+                    href: ${href}
+                    hreflang: ${hreflang}
+                    rel: ${rel}
+                    target: ${target}
+                    type: ${type}
+              `;
+            document.getElementById('output').innerHTML = output;
+        }
+
+
+        function js_style() {
+            // Get the reference to the paragraph element.
+            const paragraph = document.querySelector('p');
+
+            // Set the CSS properties of the paragraph element.
+            paragraph.style.fontWeight = 'bold';
+            paragraph.style.fontStyle = 'italic';
+        }
+
+        function insert_Row() {
+            // Get the reference to the table element.
+            const table = document.getElementById('sampleTable');
+
+            // Create a new row element.
+            const newRow = document.createElement('tr');
+
+            // Create two new cell elements.
+            const cell1 = document.createElement('td');
+            const cell2 = document.createElement('td');
+
+            // Add text to the cell elements.
+            cell1.textContent = 'New row cell 1';
+            cell2.textContent = 'New row cell 2';
+
+            // Append the cell elements to the new row element.
+            newRow.appendChild(cell1);
+            newRow.appendChild(cell2);
+
+            // Append the new row element to the table element.
+            table.appendChild(newRow);
+        }
+    </script>
+</head>
+<body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eveniet necessitatibus nemo non temporibus? Cumque</p>
+        <input type="button" value="Highlight"
+                onclick="set_background()">
+
+        <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self"
+              href="http://www.w3resource.com/">w3resource</a></p>
+
+        <div id="output"></div>
+
+        <button onclick="getAttributes()">Click here to get attributes value</button>
+
+        <button id="jsstyle" onclick="js_style()">Style</button>
+
+        <button onclick="insert_Row()">Insert Row</button>
+</body>
+</html>
